@@ -16,7 +16,7 @@ export function Main() {
 
     return (
         <S.Container>
-            {list.slice(0,24).map((item, index) => (
+            {list.map((item, index) => (
                 <S.BoxMap key={index}>
                     <p>{item.name}</p>
                     <img style={{width: "200px", height: "300px"}} src={item.image} alt="" />
