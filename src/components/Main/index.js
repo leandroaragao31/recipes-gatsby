@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from 'react'
-
-import { api } from '../../services/api'
-
+import React from 'react'
 import * as S from './style'
 
-export function Main() {
-
-    const [list, setList] = useState([])
-
-    useEffect(() => {
-        api.get()
-            .then(response => setList(response.data))
-        console.log(api.get())
-    }, [])
-
+export function Main({
+    title,
+    paragraph,
+    btnstart,
+    image,
+    divtitle,
+    divparagraph
+}) {
     return (
+        <>
         <S.Container>
-            {list.map((item, index) => (
-                <S.BoxMap key={index}>
-                    <p>{item.name}</p>
-                    <img style={{width: "200px", height: "300px"}} src={item.image} alt="" />
-                </S.BoxMap>
-            ))}
+            <S.Wrapper>
+                <S.Title>{title}</S.Title>
+                <S.Paragraph>{paragraph}</S.Paragraph>
+                <S.BtnStart>{btnstart}</S.BtnStart>
+            </S.Wrapper>
+            <img style={{width: "450px"}} src={image} alt="" />
         </S.Container>
+        <S.BoxBottom>
+            <S.TitleBottom>{divtitle}</S.TitleBottom>
+            <S.ParagraphBottom>{divparagraph}</S.ParagraphBottom>
+        </S.BoxBottom>
+        </>
     )
 }

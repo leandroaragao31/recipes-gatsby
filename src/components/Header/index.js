@@ -1,17 +1,22 @@
 import React from 'react'
-
 import * as S from './style'
 
-import { Link } from 'gatsby'
-
-export function Header() {
+export function Header({
+    image,
+    blog,
+    faq,
+    enter,
+    lang
+}) {
     return (
         <S.Container>
-            <S.List>
-                <Link to="/">inicio</Link>
-                <Link to="/Sobre">Sobre</Link>
-                <Link to="/Contatos">Contatos</Link>
-            </S.List>
+            <S.LogoImg src={image} alt="" />
+            <div>
+                <S.BtnInfo>{blog}</S.BtnInfo>
+                <S.BtnInfo>{faq}</S.BtnInfo>
+                <S.BtnInfo>{enter}</S.BtnInfo>
+                <S.BtnInfo>{lang}</S.BtnInfo>
+            </div>
         </S.Container>
     )
 }
