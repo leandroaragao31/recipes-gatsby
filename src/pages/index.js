@@ -21,6 +21,12 @@ query {
         testimg {
           url
         }
+        gif {
+          url
+        }
+        imagemain {
+          url
+        }
         subtitle
         title
       }
@@ -49,6 +55,8 @@ export default function Index({ data }) {
               image={dataMain.imagea.url}
               divtitle={dataMain.divtitle}
               divparagraph={dataMain.divparagraph}
+              imagemain={dataMain.gif.url}
+              gif={dataMain.imagemain.url}
             />
         </div>
       )

@@ -48,3 +48,62 @@ export const ParagraphBottom = styled.p`
     width: 465px;
     text-align: center;
 `
+
+export const ImageGif = styled.img`
+    width: 250px;
+`
+
+export const BoxReal = styled.div`
+    display: flex;
+    justify-content: center;
+    background: rgb(34, 37, 75);
+`
+
+export const BoxText = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        color: #fff;
+    }
+
+    p {
+        width: 450px;
+        color: #fff;
+    }
+`
+
+export const BoxLike = styled.div`
+    display: flex;
+    align-items: center;
+
+
+    div p {
+        width: 415px;
+    }
+`
+
+export const BoxFor = styled.div`
+    display: flex;
+    justify-content: center;
+    background: rgb(34, 37, 75);
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        text-align: center;
+        width: 335px;
+        color: #fff;
+    }
+
+    p {
+        text-align: center;
+        width: 650px;
+        color: #fff;
+    }
+`
