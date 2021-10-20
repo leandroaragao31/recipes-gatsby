@@ -73,8 +73,12 @@ export default function Index({ data }) {
     return (
         <div>
             <Header
+                logo={dataHeaders.logo.url}
+                about={dataHeaders.about}
+                recipes={dataHeaders.recipes}
+                subscribe={dataHeaders.subscribe}
+                background={dataHeaders.background.url}
                 title={dataHeaders.title}
-                img={dataHeaders.logo.url}
             />
         </div>
     )
