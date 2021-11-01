@@ -7,9 +7,8 @@ export function Main() {
 
     const data = useStaticQuery(graphql`
         query {
-            recipedata {
+            alldata {
                 mains {
-                    latesttitle
                     imgcake {
                       url
                     }
@@ -19,36 +18,42 @@ export function Main() {
                     imgshake {
                       url
                     }
-                    imgspoon {
+                    spoon {
                       url
                     }
-                    paragraphcake
-                    paragraphpizza
-                    paragraphshake
-                    abouttitle
+                    aboutTitle
+                    lastTitle
                     lorem
-                    subscribe
+                    paragraphAbout
+                    paragraphCake
+                    paragraphPizza
+                    paragraphShake
+                    singup
                     submit
-                    signup
+                    subscribeMain
                   }
             }
         }
     `)
 
-    const { latesttitle, imgcake, imgpizza, imgshake, imgspoon, paragraphcake, paragraphpizza, paragraphshake, abouttitle, lorem, subscribe, submit, signup } = data.recipedata.mains[0]
+    const { lastTitle, imgcake, imgpizza,
+        imgshake, spoon, paragraphCake,
+        paragraphPizza, paragraphShake,
+        aboutTitle, paragraphAbout, subscribeMain,
+        submit, singup } = data.alldata.mains[0]
 
     return (
         <>
-            <div>
-                <S.Title>{latesttitle}</S.Title>
-            </div>
+            <S.Container>
+                <S.Title>{lastTitle}</S.Title>
+            </S.Container>
             <S.ContainerLatest>
                 <S.Box>
                     <figure>
                         <S.Image src={imgcake.url} alt="" />
                     </figure>
                     <S.BoxParagraph>
-                        <S.Paragraph>{paragraphcake}</S.Paragraph>
+                        <S.Paragraph>{paragraphCake}</S.Paragraph>
                     </S.BoxParagraph>
                 </S.Box>
                 <S.Box>
@@ -56,7 +61,7 @@ export function Main() {
                         <S.Image src={imgpizza.url} alt="" />
                     </figure>
                     <S.BoxParagraph>
-                        <S.Paragraph>{paragraphpizza}</S.Paragraph>
+                        <S.Paragraph>{paragraphPizza}</S.Paragraph>
                     </S.BoxParagraph>
                 </S.Box>
                 <S.Box>
@@ -64,22 +69,22 @@ export function Main() {
                         <S.Image src={imgshake.url} alt="" />
                     </figure>
                     <S.BoxParagraph>
-                        <S.Paragraph>{paragraphshake}</S.Paragraph>
+                        <S.Paragraph>{paragraphShake}</S.Paragraph>
                     </S.BoxParagraph>
                 </S.Box>
             </S.ContainerLatest>
             <S.ContainerAbout>
                 <figure>
-                    <img src={imgspoon.url} alt="" />
+                    <S.SpoonImg src={spoon.url} alt="" />
                 </figure>
                 <S.BoxAbout>
-                    <S.AboutTitle>{abouttitle}</S.AboutTitle>
-                    <S.Lorem>{lorem}</S.Lorem>
+                    <S.AboutTitle>{aboutTitle}</S.AboutTitle>
+                    <S.Lorem>{paragraphAbout}</S.Lorem>
                 </S.BoxAbout>
             </S.ContainerAbout>
             <S.ContainerSignup>
-                <S.SubTitle>{subscribe}</S.SubTitle>
-                <p>{signup}</p>
+                <S.SubTitle>{subscribeMain}</S.SubTitle>
+                <S.Signup>{singup}</S.Signup>
                 <S.Ipt type="email" placeholder="Your Email" />
                 <S.BtnSub>{submit}</S.BtnSub>
             </S.ContainerSignup>

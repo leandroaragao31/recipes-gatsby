@@ -5,6 +5,7 @@ import { Main } from '../components/Main'
 import { Footer } from '../components/Footer'
 
 import { Helmet } from 'react-helmet'
+import GlobalStyle from '../components/GlobalStyles/global'
 
 export default function Index() {
 
@@ -13,6 +14,7 @@ export default function Index() {
       <Helmet>
         <title>Recipes</title>
       </Helmet>
+      <GlobalStyle />
       <Header />
       <Main />
       <Footer />

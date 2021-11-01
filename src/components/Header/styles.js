@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     background-image: url(${props => props.back});
-    background-position-y: -23rem;
+    margin:8px;
     background-size: cover;
-    height: 100vh;
+    width:99%;
 `
 
 export const Wrraper = styled.div`
@@ -15,16 +15,18 @@ export const Wrraper = styled.div`
 `
 
 export const BoxBtn = styled.div`
-    width: 400px;
+    width: 40vw;
     display: flex;
+    
     justify-content: space-evenly;
 `
 
 export const Btn = styled.button`
     background: transparent;
-    border: 0;
+    border: none;
     cursor: pointer;
-    font-size: 20px;
+    width:45vw;
+    font-size: 1.5vw;
     text-transform: uppercase;
 
     &:hover {
@@ -35,14 +37,18 @@ export const Btn = styled.button`
 export const BoxTitle = styled.div`
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    height: 44vh;
+    align-items: center;
+    height: 130vh;
+    
 
 `
 
 export const Title = styled.h1`
-    font-size: 8rem;
+    font-size: 7vw;
+    letter-spacing: 15.75px;
     color: #373737;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
 `
+
+

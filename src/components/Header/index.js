@@ -7,40 +7,41 @@ export function Header() {
 
     const data = useStaticQuery(graphql`
         query {
-            recipedata {
+            alldata {
                 headers {
-                    logo {
+                    btnabout
+                    btnrecipes
+                    btnsub
+                    logoimg {
                       url
                     }
-                    about
-                    recipes
-                    subscribe
-                    title
-                    background {
+                    backgroundimg {
                       url
                     }
+                    headertitle
                   }
             }
         }
 
     `)
 
-    const { logo, about, recipes, subscribe, title, background } = data.recipedata.headers[0]
+    const { logoimg, btnabout, btnrecipes,
+        btnsub, headertitle, backgroundimg } = data.alldata.headers[0]
 
     return (
-        <S.Container back={background.url}>
+        <S.Container back={backgroundimg.url}>
             <S.Wrraper>
                 <figure>
-                    <img src={logo.url} alt="" />
+                    <img src={logoimg.url} alt="" />
                 </figure>
                 <S.BoxBtn>
-                    <S.Btn>{about}</S.Btn>
-                    <S.Btn>{recipes}</S.Btn>
-                    <S.Btn>{subscribe}</S.Btn>
+                    <S.Btn>{btnabout}</S.Btn>
+                    <S.Btn>{btnrecipes}</S.Btn>
+                    <S.Btn>{btnsub}</S.Btn>
                 </S.BoxBtn>
             </S.Wrraper>
             <S.BoxTitle>
-                <S.Title>{title}</S.Title>
+                <S.Title>{headertitle}</S.Title>
             </S.BoxTitle>
         </S.Container>
     )

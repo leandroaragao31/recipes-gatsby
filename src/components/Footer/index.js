@@ -7,48 +7,50 @@ export function Footer() {
 
   const data = useStaticQuery(graphql`
         query {
-            recipedata {
-                footers {
-                    instagram {
-                      url
-                    }
-                    facebook {
-                      url
-                    }
-                    twitter {
-                      url
-                    }
-                    pinterest {
-                      url
-                    }
-                    about
-                    recipes
-                    subscribe
-                    info
-                  }
+            alldata {
+              footers {
+                about
+                facebook {
+                  url
+                }
+                insta {
+                  url
+                }
+                pinterest {
+                  url
+                }
+                twitter {
+                  url
+                }
+                paragraph
+                recipes
+                subscribe
+              }
             }
         }
     `)
 
-  const { about, recipes, subscribe, info, twitter, pinterest, facebook, instagram } = data.recipedata.footers[0]
+  const { about, recipes, subscribe,
+    paragraph, twitter, pinterest,
+    facebook, insta } = data.alldata.footers[0]
 
   return (
     <>
       <S.Container>
-        <div>
-          <img src={instagram.url} alt="" />
-          <img src={twitter.url} alt="" />
-          <img src={facebook.url} alt="" />
-          <img src={pinterest.url} alt="" />
-        </div>
-        <div>
+        <S.ContainerRedes>
+          <S.Redes src={insta.url} alt="" />
+          <S.Redes src={twitter.url} alt="" />
+          <S.Redes src={facebook.url} alt="" />
+          <S.Redes src={pinterest.url} alt="" />
+        </S.ContainerRedes>
+        <S.ContainerBtn>
           <S.Btn>{about}</S.Btn>
           <S.Btn>{recipes}</S.Btn>
           <S.Btn>{subscribe}</S.Btn>
-        </div>
+        </S.ContainerBtn>
       </S.Container>
       <S.BoxInfo>
-        <S.Info>{info}</S.Info>
+        <S.Info>{paragraph}</S.Info>
       </S.BoxInfo>
     </>
   )
