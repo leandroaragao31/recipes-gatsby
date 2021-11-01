@@ -143,7 +143,14 @@ export const BtnSub = styled.button`
     width: 20vw;
     height: 8vh;
     margin-top:5vh;
+    cursor:pointer;
     text-transform: uppercase;
     background: transparent;
+    transition: 1.5s;
     border: solid 4px #000;
+    &:hover{
+        background-color:#1C1C1C;
+        border:none;
+        color:#fff;
+    }
 `
